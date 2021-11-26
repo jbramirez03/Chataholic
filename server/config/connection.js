@@ -1,7 +1,7 @@
 // const mongoose = require('mongoose');
 import mongoose from 'mongoose';
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/comicSpaceDB', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chataholic', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     // useCreateIndex: true,
