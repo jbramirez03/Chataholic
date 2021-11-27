@@ -1,4 +1,4 @@
-import { Post } from '../models/index.js';
+import Post from '../models/index.js';
 import { pubsub } from '../server.js';
 
 const mutations = {

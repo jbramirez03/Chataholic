@@ -11,5 +11,10 @@ const schema = `
     type Subscription {
         newPost: Post
     }
+
+    type Query {
+        posts: [Post]
+    }
 `;
 
+export default schema;
