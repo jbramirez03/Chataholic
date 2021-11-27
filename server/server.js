@@ -4,6 +4,13 @@ import path from 'path';
 import db from './config/connection.js'
 const app = express();
 const PORT = process.env.PORT || 3001;
+// import { createServer } from 'http';
+// import path from 'path';
+// import { ApolloServer } from 'apollo-server-express';
+// import { execute, subscribe } from 'graphql';
+import { PubSub } from 'graphql-subscriptions';
+export const pubsub = new PubSub();
+// import { SubscriptionServer } from 'subscriptions-transport-ws';
 
 // server.applyMiddleware({ app });
 
