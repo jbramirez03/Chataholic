@@ -4,6 +4,11 @@ const schema = `
         author: String
     }
 
+    input posted {
+        message: String
+        author: String
+    }
+
     type Mutation {
         addPost(message: String!, author: String!): Post
     }

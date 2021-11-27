@@ -1,5 +1,3 @@
 import Post from './Post.js';
 
-export default {
-    Post: Post
-}
+export default Post;
