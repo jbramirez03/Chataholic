@@ -78,7 +78,7 @@ db.once('open', () => {
     if (process.env.NODE_ENV === 'production') {
       console.log('Production server started!');
     } else {
-      console.log(`Now browse to http://localhost:${PORT}/graphql`);
+      console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
     }
   })
 });

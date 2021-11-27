@@ -4,7 +4,7 @@ import { pubsub } from '../server.js';
 const mutations = {
     Mutation: {
         addPost: async (parent, args, context) => {
-            const addedPost = await Post.create(args.input);
+            const addedPost = await Post.create(args);
             pubsub.publish('POST_MESSAGE', {
                 newPost: addedPost,
             });
