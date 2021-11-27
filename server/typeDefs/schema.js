@@ -10,7 +10,7 @@ const schema = `
     }
 
     type Mutation {
-        addPost(message: String!, author: String!): Post
+        addPost(input: posted!): Post
     }
 
     type Subscription {
