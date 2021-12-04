@@ -10,7 +10,7 @@ import { WebSocketLink } from '@apollo/client/link/ws';
 
 const wsLink = new WebSocketLink({
   uri: process.env.NODE_ENV === 'production'
-    ? 'wss://fast-lowlands-56051.herokuapp.com//graphql'
+    ? 'wss://fast-lowlands-56051.herokuapp.com/graphql'
     : 'ws://localhost:3001/graphql',
   options: {
     reconnect: true
