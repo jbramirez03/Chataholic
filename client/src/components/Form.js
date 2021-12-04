@@ -4,11 +4,18 @@ import { POST_MESSAGE } from '../utils/mutations';
 import { POSTS } from '../utils/queries';
 import { MESSAGES_SUBSCRIPTION } from '../utils/subscriptions';
 
+
+const styles = {
+    container: {
+        display: 'flex',
+        justifyContent: 'center',
+    }
+}
+
 const Form = () => {
     const [message, setMessage] = React.useState('');
     const [author, setAuthor] = React.useState('');
     const [newPost] = useMutation(POST_MESSAGE);
-    // const { loading, data } = useQuery(POSTS);
     const {
         subscribeToMore,
         loading,
@@ -68,11 +75,13 @@ const Form = () => {
                 <input type="text" placeholder='author' value={author} onChange={e => setAuthor(e.target.value)} />
                 <button action='submit'>Send</button>
             </form>
-            {posts.map((post, i) => {
-                return (
-                    <div key={i}>{post.message} {post.author}</div>
-                )
-            })}
+            <div>
+                {posts.map((post, i) => {
+                    return (
+                        <div style={styles.container} key={i}>{post.message} {post.author}</div>
+                    )
+                })}
+            </div>
         </div>
     )
 }
