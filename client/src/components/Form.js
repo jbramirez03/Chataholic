@@ -1,12 +1,15 @@
 import React from 'react'
-import { useMutation, useQuery } from '@apollo/client';
+import { useMutation, useQuery, useSubscription } from '@apollo/client';
 import { POST_MESSAGE } from '../utils/mutations';
 import { POSTS } from '../utils/queries';
+import { MESSAGES_SUBSCRIPTION } from '../utils/subscriptions';
 
 const Form = () => {
     const [message, setMessage] = React.useState('');
     const [newPost] = useMutation(POST_MESSAGE);
     const { loading, data } = useQuery(POSTS);
+    const { data: postsData, loading: loadingPosts } = useSubscription(MESSAGES_SUBSCRIPTION);
+
 
 
     const handlePost = async () => {
@@ -20,6 +23,10 @@ const Form = () => {
         handlePost();
         console.log(message);
     };
+
+    React.useEffect(() => {
+        console.log(postsData)
+    }, [postsData])
 
     if (loading) {
         return (
