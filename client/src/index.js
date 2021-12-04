@@ -9,14 +9,18 @@ import { getMainDefinition } from '@apollo/client/utilities';
 import { WebSocketLink } from '@apollo/client/link/ws';
 
 const wsLink = new WebSocketLink({
-  uri: 'ws://localhost:3001/graphql',
+  uri: process.env.NODE_ENV === 'production'
+    ? 'wss://fast-lowlands-56051.herokuapp.com//graphql'
+    : 'ws://localhost:3001/graphql',
   options: {
     reconnect: true
   }
 });
 
 const httpLink = new HttpLink({
-  uri: 'http://localhost:3001/graphql'
+  uri: process.env.NODE_ENV === 'production'
+    ? 'https://fast-lowlands-56051.herokuapp.com/graphql'
+    : 'http://localhost:3001/graphql',
 });
 
 
