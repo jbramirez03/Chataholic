@@ -6,6 +6,7 @@ import { MESSAGES_SUBSCRIPTION } from '../utils/subscriptions';
 
 const Form = () => {
     const [message, setMessage] = React.useState('');
+    const [author, setAuthor] = React.useState('');
     const [newPost] = useMutation(POST_MESSAGE);
     // const { loading, data } = useQuery(POSTS);
     const {
@@ -27,7 +28,7 @@ const Form = () => {
 
     const handlePost = async () => {
         await newPost({
-            variables: { message: message, author: 'anonymous' }
+            variables: { message: message, author: author }
         })
     };
 
@@ -79,12 +80,13 @@ const Form = () => {
         <div>
             <form action="submit" onSubmit={onSubmit}>
                 <input type="text" placeholder='message' value={message} onChange={e => setMessage(e.target.value)} />
+                <input type="text" placeholder='author' value={author} onChange={e => setAuthor(e.target.value)} />
                 <button action='submit'>Send</button>
             </form>
             <button onClick={() => console.log(posts)}>Check</button>
             {posts.map((post, i) => {
                 return (
-                    <div key={i}>{post.message}</div>
+                    <div key={i}>{post.message} {post.author}</div>
                 )
             })}
         </div>
