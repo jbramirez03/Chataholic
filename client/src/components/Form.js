@@ -55,26 +55,11 @@ const Form = () => {
         console.log(message);
     };
 
-    // React.useEffect(() => {
-    //     console.log(loadingPosts);
-    // }, [loadingPosts])
-    // React.useEffect(() => {
-    //     if (!loadingPosts) {
-    //         console.log(postsData)
-    //     }
-    // }, [loadingPosts])
-
     if (loading) {
         return (
             <div>loading...</div>
         )
     }
-
-    // if (loadingPosts) {
-    //     return (
-    //         <div>subscriptions loading...</div>
-    //     )
-    // }
 
     return (
         <div>
@@ -83,7 +68,6 @@ const Form = () => {
                 <input type="text" placeholder='author' value={author} onChange={e => setAuthor(e.target.value)} />
                 <button action='submit'>Send</button>
             </form>
-            <button onClick={() => console.log(posts)}>Check</button>
             {posts.map((post, i) => {
                 return (
                     <div key={i}>{post.message} {post.author}</div>
