@@ -1,5 +1,5 @@
 body {
-  background-color: #7ab4f5;
+  background-color: #201c2b;
 }
 
 .container {
@@ -8,6 +8,8 @@ body {
 }
 
 .commentBlock {
-  border: 1px solid black;
+  border-radius: 20px;
+  padding: 8px 15px;
   margin: 1rem;
+  color: #e5e3e8;
 }
