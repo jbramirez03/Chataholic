@@ -78,7 +78,7 @@ const Form = () => {
             <div>
                 {posts.map((post, i) => {
                     return (
-                        <div style={styles.container} key={i}>{post.message} {post.author}</div>
+                        <div className='commentBlock' style={styles.container} key={i}>{post.message} {post.author}</div>
                     )
                 })}
             </div>
