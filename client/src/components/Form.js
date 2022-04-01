@@ -69,12 +69,7 @@ const Form = () => {
     }
 
     return (
-        <div>
-            <form action="submit" onSubmit={onSubmit}>
-                <input type="text" placeholder='message' value={message} onChange={e => setMessage(e.target.value)} />
-                <input type="text" placeholder='author' value={author} onChange={e => setAuthor(e.target.value)} />
-                <button action='submit'>Send</button>
-            </form>
+        <div className='text-container'>
             <div>
                 {posts.map((post, i) => {
                     return (
@@ -82,6 +77,11 @@ const Form = () => {
                     )
                 })}
             </div>
+            <form action="submit" onSubmit={onSubmit}>
+                <input type="text" placeholder='message' value={message} onChange={e => setMessage(e.target.value)} />
+                <input type="text" placeholder='author' value={author} onChange={e => setAuthor(e.target.value)} />
+                <button action='submit'>Send</button>
+            </form>
         </div>
     )
 }

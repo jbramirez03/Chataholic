@@ -1,15 +1,27 @@
 body {
-  background-color: #201c2b;
+  background-color: #effffd;
 }
 
 .container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 5rem;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 968px;
+  margin-left: 1.5 rem;
+  margin-right: 1.5 rem;
 }
 
 .commentBlock {
+  font-weight: 400;
   border-radius: 20px;
   padding: 8px 15px;
-  margin: 1rem;
-  color: #e5e3e8;
+  margin-bottom: 1rem;
+  color: #343435;
 }
