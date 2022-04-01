@@ -14,8 +14,10 @@ body {
   justify-content: center;
   flex-direction: column;
   max-width: 968px;
-  margin-left: 1.5 rem;
-  margin-right: 1.5 rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(#777777, 0.5);
+  background: #f9fbff;
+  opacity: 0.85;
 }
 
 .commentBlock {
